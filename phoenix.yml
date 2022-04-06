@@ -1,0 +1,12 @@
+log_table_name: migrations
+migration_dirs:
+  first: '%%ACTUAL_DIR%%/migrations'
+environments:
+  development:
+    adapter: mysql
+    host: 127.0.0.1
+    port: 33006
+    username: root
+    password: secret
+    db_name: rvrbk
+default_environment: development

@@ -1,0 +1,272 @@
+@import url(milligram/dist/milligram.css);
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+$green: #3ddf68;
+$green-dark: #0b2813;
+$yellow: #ecdb46;
+$general-space: 31px;
+
+body {
+    background-color: #000;
+    font-family: 'Ubuntu Mono', monospace;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3em;
+    color: $green;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        width: 100vw;
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 66px;
+            font-size: 1.3em;
+            flex-shrink: 0;
+    
+            .logo {
+                margin-left: $general-space;
+
+                a {
+                    color: $green;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+    
+            nav {
+                margin-right: $general-space;
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    display: flex;
+    
+                    li {
+                        text-transform: lowercase;
+                        margin: 0 0 0 3px;
+    
+                        a {
+                            display: block;
+                            border-radius: 4px;
+                            padding: 0 10px;
+                            line-height: 31px;
+                            color: $green;
+
+                            &:hover {
+                                background-color: $green-dark;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 25px;
+            flex-grow: 1;
+
+            .main-content {
+                margin-left: $general-space;
+                width: 60%;
+                margin-bottom: $general-space;
+            }
+
+            .side {
+                margin-right: calc($general-space + 10px);
+
+                nav {
+                    text-align: right;
+
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+
+                        li {
+                            > a {
+                                position: relative;
+                                color: $green;
+
+                                .material-icons {
+                                    position: relative;
+                                    top: 4px;
+                                    font-size: 1.3em;
+                                }
+                            }
+                            
+                            li {
+                                margin-bottom: 0;
+
+                                a {
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 98px;
+            margin-left: $general-space;
+
+            .socials {
+                nav {
+                    display: flex;
+                    flex-direction: row;
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        margin: 0 25px 0 0;
+                        padding: 0;
+                        list-style: none;
+
+                        li {
+                            color: $green;
+                            margin-bottom: 0;
+
+                            a {
+                                position: relative;
+                                color: $green;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+
+                            .material-icons {
+                                position: relative;
+                                top: 4px;
+                                font-size: 1.3em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contact {
+                display: flex;
+                flex-direction: row;
+                margin-right: $general-space;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin: 0 15px 0 0;
+                    padding: 0;
+                    list-style: none;
+
+                    li {
+                        margin-bottom: 0;
+                        line-height: 0;
+
+                        textarea, input {
+                            background-color: $green-dark;
+                            border-radius: 3px;
+                            border: none;
+                            color: $green;
+                            font-family: 'Ubuntu Mono', monospace;
+                            font-size: 13px;
+                            margin: 0 0 15px 0;
+                            line-height: 1.6;
+                        }
+
+                        textarea {
+                            min-height: 61px;
+                            line-height: 14px;
+                            width: 300px;
+                        }
+
+                        input {
+                            height: 23px;
+                            width: 120px;
+                        }
+
+                        a[type=submit] {
+                            display: block;
+                            color: $green;
+                            text-align: center; 
+                            width: 55px;
+                            line-height: 61px;
+                            background-color: $green-dark;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .circles {
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: -1;
+
+        .circle {
+            position: absolute;
+            opacity: .04;
+            bottom: 0;
+            border-radius: 50%;
+            background-color: $green;
+            width: 102vw;
+            height: 70vh;
+  
+            &:nth-child(1) {
+                bottom: -372px;
+                left: -573px;
+            }
+
+            &:nth-child(2) {
+                bottom: -542px;
+                right: -387px;
+            }
+        }
+    }
+
+    .yellow-text {
+        color: $yellow;
+    }
+}
+
+@media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        .wrapper {
+            width: 80vw;
+        }
+    }
+}
