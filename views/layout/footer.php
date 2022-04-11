@@ -14,7 +14,7 @@
             </ul>
         </nav>
     </section>
-    <form class="contact" action="/api/send-contactform">
+    <form class="contact" action="/api/social/contact">
         <ul>
             <li><input required name="name" placeholder="name"></li>
             <li><input type="email" name="email" placeholder="email"></li>

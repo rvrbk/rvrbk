@@ -32,7 +32,9 @@ export class Foarm {
             pairs[key] = value;
         });
 
-        axios.post(this.postUrl, pairs).then(response => {
+        axios.post(this.postUrl, {
+            blaat: 'blaat'
+        }).then(response => {
             console.log(response);
         });
     }

@@ -6,8 +6,12 @@ use App\Models\Page;
 
 class PageController
 {
-    static public function getById(int $id): void
+    static public function get(int $id): object
     {
-        dd($id);
+        if ($page = Page::getById($id)) {
+            return $page;
+        }
+
+        throw new Exception('Page not found');
     }
 }
