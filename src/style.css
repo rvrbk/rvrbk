@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 { @apply text-4xl text-yellow-300 font-bold py-7 }
+h2 { @apply text-3xl text-yellow-300 font-bold py-3 }
+h3 { @apply text-xl text-yellow-300 font-bold py-3 }
+p { @apply mb-4 }

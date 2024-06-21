@@ -1,0 +1,167 @@
+<header>
+    <nav>
+        <div class="container mx-auto px-8 py-2 flex justify-between items-center h-20">
+            <div class="flex-shrink-0">
+                <a href="/" class="text-lg hover:text-yellow-600 text-yellow-300">rvrbk<span class="text-gray-400">.</span>dev</a>
+            </div>
+            <div class="hidden md:flex space-x-4 text-gray-400">
+                <nav class="relative">
+                    <ul class="flex space-x-8">
+                        <li><a href="/" class="block py-2 px-2 hover:text-gray-200 rounded">About</a></li>
+                        <li class="group relative">
+                            <a href="#" class="block py-2 px-2 hover:text-gray-200 rounded">Projects</a>
+                            <ul class="z-30 absolute left-0 w-48 bg-gray-800 border border-gray-900 rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300 invisible">
+                                <li><a href="/releasenotegenerator" class="block px-2 py-2 hover:bg-gray-700">AI Releasenote Generator</a></li>
+                                <li><a href="/releasenotegenerator" class="block px-2 py-2 hover:bg-gray-700">Optimal Flight</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/contact" class="block py-2 px-2 hover:text-gray-200 rounded">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="text-gray-400">
+                <div class="max-w-md mx-auto">
+                    <div class="flex items-center relative">
+                        <div class="relative w-80">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.385 4.386a1 1 0 01-1.414 1.414l-4.385-4.386zM8 14A6 6 0 108 2a6 6 0 000 12z" clip-rule="evenodd" />
+                              </svg>
+                            </div>
+                            <input name="query" placeholder="Search..." class="w-full pl-10 pr-4 py-2 bg-darkGray border border-black rounded-md shadow-lg focus:outline-none focus:border-gray-800">
+                          </div>
+                        <div id="dropdownSearch" class="z-30 absolute right-0 top-[45px] w-80 bg-gray-800 border border-gray-900 rounded shadow-lg hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex">
+                <button id="menu-btn" class="text-yellow-100 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="menu" class="hidden md:hidden">
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">About</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Services</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Contact</a>
+        </div>
+        <div class="bg-gray-900 relative h-[600px]">
+            <div class="absolute top-40 left-16">
+                <p><span class="text-yellow-300 text-bold text-4xl">Rik Verbeek</span></p>
+                <p><span class="text-gray-400 text-3xl">Product Owner, PHP & Python<br>Developer</span></p>
+                <button class="bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md mt-7">Contact me</button>
+            </div>
+            <div class="absolute bottom-0 right-20">
+                <img class="opacity-10" src="/me.png" />
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    const dropdownSearch = document.getElementById('dropdownSearch');
+
+    const search = () => {
+        const query = document.querySelector('input[name=query]').value.toLowerCase();
+
+        if(query.length > 2) {
+            fetch('searchify.json').then(response => {
+                return response.json();
+            }).then(data => {
+                let matches = [];
+
+                data.forEach(page => {
+                    page.metas.forEach(meta => {
+                        if(meta.name === 'description') {
+                            if(meta.content.toLowerCase().search(query) >= 0) {
+                                matches.push(page);
+                            }
+                        }
+
+                        if(meta.name === 'keywords') {
+                            meta.content.split(',').forEach(keyword => {
+                                if(keyword.replace(' ', '').toLowerCase() === query) {
+                                    if(matches.indexOf(page) < 0) {
+                                        matches.push(page);
+                                    }
+                                }
+                            });
+                        }
+                    });
+
+                    if(matches.length > 0) {
+                        dropdownSearch.classList.remove('hidden');
+                        dropdownSearch.innerHTML = '';
+                        
+                        matches.forEach(page => {
+                            let title = page.page;
+                            
+                            page.metas.forEach(meta => {
+                                if(meta.title != undefined) {
+                                    title = meta.title
+                                }
+                            });
+
+                            dropdownSearch.innerHTML += `<a href="/${ page.page === 'index' ? '' : page.page }" class="block px-4 py-2 hover:bg-gray-700">${title}</a>`
+                        });
+                    }
+                    else {
+                        dropdownSearch.classList.add('hidden');
+                    }
+                });
+            });
+        }
+        else {
+            dropdownSearch.classList.add('hidden');
+        }
+    }
+
+    // Arrow nav in search
+    let currentIndex = 0;
+    let href = '';
+
+    function updateFocus() {
+        document.querySelectorAll('#dropdownSearch a').forEach((item, index) => {
+            if(index === currentIndex) {
+                item.classList.add('bg-gray-700');
+                href = item.attributes['href'].value;
+            } 
+            else {
+                item.classList.remove('bg-gray-700');
+            }
+      });
+    }
+
+    document.querySelector('input[name=query]').addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowDown') {
+            e.preventDefault();
+            currentIndex = (currentIndex + 1) % document.querySelectorAll('#dropdownSearch a').length;
+
+            updateFocus();
+        }
+        else if(e.key === 'ArrowUp') {
+            e.preventDefault();
+            currentIndex = (currentIndex - 1 + document.querySelectorAll('#dropdownSearch a').length) % document.querySelectorAll('#dropdownSearch a').length;
+
+            updateFocus();
+        }
+        else if(e.key === 'Enter') {
+            window.location = href;
+        }
+    });
+
+    // Search
+    document.querySelector('input[name=query]').addEventListener('input', (e) => {
+        search();
+    });
+</script>

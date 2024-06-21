@@ -1,0 +1,58 @@
+[
+  {
+    "page": "send-email",
+    "metas": []
+  },
+  {
+    "page": "contact",
+    "metas": [
+      {
+        "name": "description",
+        "content": "Contact me"
+      },
+      {
+        "name": "keywords",
+        "content": "contact, email, touch, form, service, freelance"
+      },
+      {
+        "title": "Contact me"
+      }
+    ]
+  },
+  {
+    "page": "index",
+    "metas": [
+      {
+        "name": "description",
+        "content": "About me, deals with the kind of person I am and how I take on development and product owner work."
+      },
+      {
+        "name": "keywords",
+        "content": "python, javascript, scrum, php, product owner, work, service, freelance"
+      },
+      {
+        "title": "About me"
+      }
+    ]
+  },
+  {
+    "page": "projects",
+    "metas": []
+  },
+  {
+    "page": "releasenotegenerator",
+    "metas": [
+      {
+        "name": "description",
+        "content": "Releasenote Generator project, I made this to make writing releasenotes a bit easier as a Product Owner."
+      },
+      {
+        "name": "keywords",
+        "content": "release, notes, releasenotes, ai, artificial intelligence, artificial, intelligence, python, jira, strapi, openai, api"
+      },
+      {
+        "title": "Releasenote Genearator"
+      }
+    ]
+  }
+]

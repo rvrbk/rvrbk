@@ -1,0 +1,69 @@
+---
+import Layout from '../layout/Layout.astro';
+---
+
+<slot name="metas">
+	<title>Contact me</title>
+	<meta name="description" content="Contact me" />
+	<meta name="keywords" content="contact, email, touch, form, service, freelance" />
+</slot>
+
+<Layout>
+	<div class="container mb-20">
+		<h1 class="text-4xl text text-yellow-300 font-bold py-7">Contact</h1>
+		<div id="successMessage" class="bg-gray-100 text-green-800 px-4 py-2 mb-4 rounded-md inline-block hidden">
+			Thank you for your message, I'll be in contact with you soon!
+		</div>
+		<p class="mb-4">
+			I’m eager to connect with you! If you have a unique idea or a project you'd like to collaborate on, I’d love to hear about it. Let’s work together to bring innovative concepts to life.
+		</p>
+		<form name="contact" method="post">
+			<input type="text" id="honeypot" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off">
+			<div class="mb-4">
+				<input placeholder="Name..." name="name" class="mt-1 block w-full p-2 rounded-md sm:text-sm text-gray-800" required>
+			</div>
+			<div class="mb-4">
+				<input placeholder="Email..." type="email" name="email" class="mt-1 block w-full p-2 rounded-md sm:text-sm text-gray-800" required>
+			</div>
+			<div class="mb-4">
+				<textarea placeholder="Message..." name="message" class="mt-1 block w-full p-2 rounded-md sm:text-sm text-gray-800" rows="4" required></textarea>
+			</div>
+			<button type="submit" class="bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md mt-7">Submit</button>
+		</form>
+	</div>
+
+	<script>
+		document.querySelector('form[name=contact] button[type=submit]').addEventListener('click', async (e) => {
+			e.preventDefault();
+			
+			document.querySelector('#successMessage').classList.add('hidden');
+
+			const emailData = {
+				email: document.querySelector('input[name=email]').value, 
+				name: document.querySelector('input[name=name]').value,
+				message: document.querySelector('textarea[name=message]').value,
+				honeypot: document.querySelector('input[name=honeypot]').value,
+			};
+
+			const response = await fetch('/api/send-email', {
+				method: 'post',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(emailData),
+			});
+
+			const result = await response.json();
+			
+			if (result.success) {
+				document.querySelector('#successMessage').classList.remove('hidden');
+
+				document.querySelector('input[name=email]').value = '';
+				document.querySelector('input[name=name]').value = '';
+				document.querySelector('textarea[name=message]').value = '';
+			} else {
+				console.error(result)
+			}
+		});
+	</script>
+</Layout>

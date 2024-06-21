@@ -1,4 +1,8 @@
 import { defineConfig } from 'astro/config';
+import dotenv from 'dotenv';
 
-// https://astro.build/config
-export default defineConfig({});
+dotenv.config();
+
+export default defineConfig({
+    output: "server"
+});
