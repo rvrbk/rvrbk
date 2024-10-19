@@ -6,6 +6,6 @@
 - `ai-flight` - Calculate the best way to the airport
 - `crowded-airport` - Crowd sourced airport information
 - `map-of-history` - Crowd sourced history about a place on the map
-- `collective-canvas` - creare crowd-sourced drawings
+- `collective-canvas` - Create crowd-sourced drawings
 - `spot-your-match-ify` - Spotify API powered dating service based on mutual musical tastes
 
