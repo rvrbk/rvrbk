@@ -8,3 +8,10 @@
 - map-of-history - Crowd sourced history about a place on the map
 - collective-canvas - creare crowd-sourced drawings
 - spot-your-match-ify - Spotify API powered dating service based on mutual musical tastes
+
+---
+title: "A Trip To the Zoo"
+tags: ["animals", "Chicago", "zoos"]
+---
+
+I went to the zoo today. It was terrible.
