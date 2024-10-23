@@ -8,4 +8,4 @@
 - `map-of-history` - Crowd sourced history about a place on the map
 - `collective-canvas` - Create crowd-sourced drawings
 - `spot-your-match-ify` - Spotify API powered dating service based on mutual musical tastes
-
+- `map-of-histories` - Click on a place and it will show you its history 
