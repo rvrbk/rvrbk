@@ -9,5 +9,5 @@
 - `collective-canvas` - Create crowd-sourced drawings
 - `spot-your-match-ify` - Spotify API powered dating service based on mutual musical tastes
 - `map-of-histories` - Click on a place and it will show you its history
-- `ui-crafter` - Draw shapes and the program will smeeth them out, goal is to quickly and simply design user interfaces, maybe spit out html/tailwind
+- `ui-crafter` - Draw shapes and the program will smooth them out, goal is to quickly and simply design user interfaces, maybe spit out html/tailwind
 - `instai` - Let AI generate graphics based on insta posts you want to make
