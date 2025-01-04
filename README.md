@@ -11,3 +11,4 @@
 - `map-of-histories` - Click on a place and it will show you its history
 - `ui-crafter` - Drag elements on a page and apply tailwind classes for quick ui tryouts
 - `instai` - Let AI generate graphics based on insta posts you want to make
+- 'pencil-correct' - autocorrect for classic writing, the pencil vibrates when you made an error and projects the correct spelling on the paper.
