@@ -8,7 +8,6 @@
 - `map-of-history` - Crowd sourced history about a place on the map
 - `collective-canvas` - Create crowd-sourced drawings
 - `spot-your-match-ify` - Spotify API powered dating service based on mutual musical tastes
-- `map-of-histories` - Click on a place and it will show you its history
 - `ui-crafter` - Drag elements on a page and apply tailwind classes for quick ui tryouts
 - `instai` - Let AI generate graphics based on insta posts you want to make
-- 'pencil-correct' - autocorrect for classic writing, the pencil vibrates when you made an error and projects the correct spelling on the paper.
+- `pencil-correct` - autocorrect for classic writing, the pencil vibrates when you made an error and projects the correct spelling on the paper.
