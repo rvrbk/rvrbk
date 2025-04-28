@@ -13,3 +13,4 @@
 - `pencil-correct` - Autocorrect for classic writing, the pencil vibrates when you made an error and projects the correct spelling on the paper
 - `truth-seeker` -  Feed an audiofile like a podcast, transcribe and fact check using AI
 - `lingy` - Learn a language by translating your favorite songs (via Spotify) to your preffered language so you can read them as lyrics while listening to the song
+- `snippety` - Search for code snippets in a vector database with the code codebase converted to vectors based on a query 
