@@ -2,7 +2,7 @@
 - `crime-tracker` - See where crimes are on a map
 - `check-me-in` - Check in at places with qr codes, allows you to generate qr codes and track who checks in and where and have graphs of it and stuff. Payed users can strack more...
 - `address-mover` - Submit your address and let us figure out where you are registered
-- `ai-pickup-line` - Tell us where you are, what he/she looks like and wahat your personality is and we'll generate a pickup line
+- `ai-pickup-line` - Tell us where you are, what he/she looks like and what your personality is and we'll generate a pickup line
 - `ai-flight` - Calculate the best way to the airport
 - `crowded-airport` - Crowd sourced airport information
 - `map-of-history` - Crowd sourced history about a place on the map
