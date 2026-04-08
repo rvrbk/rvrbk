@@ -15,3 +15,5 @@
 - `lingy` - Learn a language by translating your favorite songs (via Spotify) to your preffered language so you can read them as lyrics while listening to the song
 - `snippety` - Search for code snippets in a vector database with the code codebase converted to vectors based on a query
 - `sgsst` - Let AI compose a Spotify playlist based on your current favorite songs
+- `agriflow` - A WMS for Ugandan farmers
+- `fuganda` - A Funda for Uganda, let houseowners advertise directly on a map
