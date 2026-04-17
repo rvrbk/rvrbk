@@ -17,3 +17,4 @@
 - `sgsst` - Let AI compose a Spotify playlist based on your current favorite songs
 - `agriflow` - A WMS for Ugandan farmers
 - `fuganda` - A Funda for Uganda, let houseowners advertise directly on a map
+- `fashiongrapy` - An agentic AI solution that generates fashion photos for a webshop
