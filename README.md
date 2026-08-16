@@ -18,5 +18,6 @@
 - `agriflow` - A WMS for Ugandan farmers
 - `fuganda` - A Funda for Uganda, let houseowners advertise directly on a map
 - `fashiongrapy` - An agentic AI solution that generates fashion photos for a webshop
-- `smart crm` - A crm that actually tracks people
-- `uganda learns` - A platform for learning, easily accessable
+- `smart-crm` - A crm that actually tracks people
+- `uganda-learns` - A platform for learning, easily accessable
+- `prompt-a-tool` - A website where non-coders can get their prompt to build their own app with various tools
